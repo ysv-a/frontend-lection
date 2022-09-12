@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body class="page">
+    <header class="page__header user-header">
+        <div class="container user-header__inner">
+            <div class="user-header__text">
+                <p>Furnob's COVID-19 Updates & Shipment Delays <a href="#">Learn More</a></p>
+            </div>
+            <div class="user-header__links user-links">
+                <div class="user-links__item select">
+                    <p class="select__text">English</p>
+                    <span class="select__wrapper"><svg class="select__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></span>
+                </div>
+                <div class="user-links__item select">
+                    <p class="select__text">USD</p>
+                    <span class="select__wrapper"><svg class="select__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></span>
+                </div>
+                <div class="user-links__item">
+                    <a href="#" class="group-icon">
+                        <svg class="group-icon__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span class="group-icon__name">My Account</span>
+                    </a>
+                </div>
+                <div class="user-links__item">
+                    <button class="group-icon" type="button">
+                        <svg class="group-icon__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span class="group-icon__name">Choose Location</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="page__header page__header--sticky">
+        <div class="container main-header">
+            <div class="main-header__logo logo">
+                <img class="logo__img" src="images/furnob-logo-dark.png" alt="">
+            </div>
+            <div class="main-header__menu">
+                <nav class="site-navigation">
+                    <ul class="site-navigation__inner">
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link site-navigation__link--active" href="#">Home</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Shop</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Living Room</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Kitchen</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Decoration</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Blog</a>
+                        </li>
+                        <li class="site-navigation__item">
+                            <a class="site-navigation__link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main-header__actions">
+                <div class="icon">
+                    <svg class="icon__img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <div class="icon">
+                    <svg class="icon__img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <small class="icon__count badge badge--text-sm badge--rounded"><span class="badge__inner">5</span></small>
+                </div>
+                <div class="icon">
+                    <svg class="icon__img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <small class="icon__count badge badge--text-sm badge--rounded"><span class="badge__inner">1</span></small>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="page__content">
+        <div class="banner banner--image banner--center" style="background-image: url('images/shop-header.jpg');">
+            <div class="banner__inner">
+                <h1 class="main-heading">Shop</h1>
+            </div>
+        </div>
+        <div class="container">
+
+            <section class="category-lists">
+                <h2 class="sr-only">Список категорий</h2>
+                <div class="category-lists__inner">
+                    <article class="category-list">
+                        <h3 class="category-list__name">Living Room</h3>
+                        <small class="category-list__count">11 Items</small>
+                    </article>
+                    <article class="category-list">
+                        <h3 class="category-list__name">Living Room</h3>
+                        <small class="category-list__count">11 Items</small>
+                    </article>
+                    <article class="category-list">
+                        <h3 class="category-list__name">Living Room</h3>
+                        <small class="category-list__count">11 Items</small>
+                    </article>
+                    <article class="category-list">
+                        <h3 class="category-list__name">Living Room</h3>
+                        <small class="category-list__count">11 Items</small>
+                    </article>
+                    <article class="category-list">
+                        <h3 class="category-list__name">Living Room</h3>
+                        <small class="category-list__count">11 Items</small>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <div class="product-catalog container">
+            <section class="product-catalog__lists">
+                <h2 class="sr-only">Список товаров</h2>
+                <div class="catalog">
+                    <article class="catalog__item product">
+                        <div class="product__media">
+                            <small class="product__badge badge badge--primary badge--weight-lg">
+                                <span class="badge__inner">-14%</span>
+                            </small>
+                            <img class="product__img" src="images/delphine3.jpg" alt="">
+                        </div>
+                        <h3 class="product__name"><a class="product__link" href="#">Delphine Cane Velvet Accent Chair</a></h3>
+                        <div class="product__price">
+                            <span class="product__price-actual">$289.70</span>
+                            <s>$249.70</s>
+                        </div>
+                        <div class="product__rating rating">
+                            <div class="rating__stars">
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <div class="rating__count">3.00 Rating</div>
+                        </div>
+                        <div class="product__info">
+                            <p class="info-badge">2 Day Delivery</p>
+                        </div>
+                    </article>
+
+
+                    <article class="catalog__item product">
+                        <div class="product__media">
+                            <small class="product__badge badge badge--secondary badge--weight-lg">
+                                <span class="badge__inner">Trending</span>
+                            </small>
+                            <img class="product__img" src="images/delphine3.jpg" alt="">
+                        </div>
+                        <h3 class="product__name"><a class="product__link" href="#">Delphine Cane Velvet Accent Chair</a></h3>
+                        <div class="product__price">
+                           <span>$289.70</span>
+                        </div>
+                        <div class="product__rating rating">
+                            <div class="rating__stars">
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <svg class="rating__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="yellow" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <div class="rating__count">3.00 Rating</div>
+                        </div>
+                        <div class="product__info">
+                            <p class="info-badge">2 Day Delivery</p>
+                        </div>
+                    </article>
+
+                    <aside class="catalog__item ads">
+                        <img class="ads__media" src="images/00-ultrahd.su-ads-vs-ips.jpg" alt="">
+                    </aside>
+                </div>
+                <div class="product-catalog__pagination">
+                    <nav class="pagination">
+                        <ul class="pagination__inner">
+                            <li class="pagination__item">
+                              <a class="pagination__link pagination__link--disabled" href="#">
+                                <span class="sr-only">Назад</span>
+                                <svg class="pagination__link-img" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg"><path d="M2.707 5.975l3.967-4.032A1.149 1.149 0 006.31.088a1.105 1.105 0 00-1.226.249L.33 5.167A1.14 1.14 0 000 5.974a1.155 1.155 0 00.331.808l4.752 4.887a1.119 1.119 0 001.591 0 1.149 1.149 0 000-1.606l-3.967-4.09z"/></svg>
+                              </a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link pagination__link--active" href="#">1</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">2</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">4</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">5</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">6</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">7</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">8</a>
+                            </li>
+                            <li class="pagination__item">
+                              <a class="pagination__link" href="#">
+                                <span class="sr-only">Вперёд</span>
+                                <svg class="pagination__link-img" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg"><path d="M4.293 5.975L.326 1.943A1.149 1.149 0 01.69.088a1.105 1.105 0 011.226.249l4.752 4.83A1.14 1.14 0 017 5.974a1.155 1.155 0 01-.331.808L1.917 11.67a1.119 1.119 0 01-1.591 0 1.149 1.149 0 010-1.606l3.967-4.09z" /></svg>
+                              </a>
+                            </li>
+                          </ul>
+                    </nav>
+
+                </div>
+            </section>
+            <section class="product-catalog__sidebar">
+                <h2 class="sr-only">Фильтры</h2>
+                <form action="GET">
+                    <article class="filter-form">
+                        <h2 class="filter-form__title">Product Categories</h2>
+                        <div class="filter-form__inner">
+                            <div class="filter-form__option filter-form__option--column">
+                                <label class="filter-form__name" for="text-search">Поиск текста</label>
+                                <input type="text" id="text-search" class="filter-form__value input">
+                            </div>
+                            <label class="filter-form__option">
+                                <input type="checkbox" class="filter-form__value checkbox">
+                                <span class="filter-form__name">Living Room</span>
+                            </label>
+                            <label class="filter-form__option">
+                                <input type="checkbox" class="filter-form__value checkbox">
+                                <span class="filter-form__name">Bedroom</span>
+                            </label>
+                        </div>
+                    </article>
+                    <article class="filter-form">
+                        <h2 class="filter-form__title">Brands</h2>
+                        <div class="filter-form__inner">
+                            <div class="filter-form__group">
+                                <label class="filter-form__option">
+                                    <input type="checkbox" class="filter-form__value checkbox">
+                                    <span class="filter-form__name">Brooklyn</span>
+                                </label>
+                                <span class="filter-form__count">(21)</span>
+                            </div>
+                            <div class="filter-form__group">
+                                <label class="filter-form__option">
+                                    <input type="checkbox" class="filter-form__value checkbox">
+                                    <span class="filter-form__name">Harmony</span>
+                                </label>
+                                <span class="filter-form__count">(10)</span>
+                            </div>
+                        </div>
+                    </article>
+                </form>
+
+                <aside class="product-catalog__attention">
+                    <img src="images/sidebar-banner.jpg" alt="">
+                </aside>
+
+            </section>
+        </div>
+    </section>
+    <div class="banner">
+        <aside class="banner__inner container subscribe">
+            <div class="subscribe__text">
+                <p>Get our emails for info on new items, sales and more.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="page__footer"></footer>
+</body>
+</html>
