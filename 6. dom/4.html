@@ -1,0 +1,27 @@
+<form>
+    <label>
+      <input class="radio-1" type="radio" name="choice" value="1" checked>
+      Человек
+    </label>
+    <label>
+      <input class="radio-2" type="radio" name="choice" value="2">
+      Робот
+    </label>
+  </form>
+
+<script>
+const choise = document.querySelector('input[name="choice"][checked]').value;
+const example = document.querySelectorAll('form input')
+example.forEach((radio) => {
+	console.log(radio.checked);
+})
+
+// const choise2 = document.querySelector('input[name="choice"]:checked').value;
+
+// const radio1 = document.querySelector('.radio-1')
+// const radio2 = document.querySelector('.radio-2')
+// radio2.setAttribute('checked', 'checked');
+
+// console.dir(radio1);
+
+</script>

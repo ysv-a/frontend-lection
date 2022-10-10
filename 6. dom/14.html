@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="item1" type="text">
+
+    <select onchange="alert(this.value)">
+        <option value="">Выберите что-нибудь</option>
+        <option value="1">Вариант 1</option>
+        <option value="2">Вариант 2</option>
+        <option value="3">Вариант 3</option>
+    </select>
+
+    <input onchange="alert(this.value)" class="item2" name="item" value="1" type="checkbox">
+    <input onchange="alert(this.value)" class="item2" name="item" value="2" type="checkbox">
+
+
+    <input onchange="alert(this.value)" class="item3" name="item2" value="1" type="radio">
+    <input onchange="alert(this.value)" class="item3" name="item2" value="2" type="radio">
+
+    <hr>
+
+    <input type="text" id="input">
+    <div>
+        oninput: <span id="result"></span>
+    </div>
+
+    <script>
+        document.querySelector('.item1').addEventListener('change', () => {
+            alert('change')
+        })
+
+        const result = document.querySelector('#result');
+        const input = document.querySelector('#input');
+        input.oninput = () => result.textContent = input.value;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            background-color: red;
+        }
+        td {
+         border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+          <th colspan="3">Квадрат <em>Bagua</em>: Направление, Элемент, Цвет, Значение</th>
+        </tr>
+        <tr>
+          <td>...<strong>Северо-Запад</strong>...</td>
+          <td>text 4</td>
+          <td>text 3</td>
+        </tr>
+        <tr>
+          <td>text 1<strong>Северо-Запад</strong>...</td>
+          <td>text 2 <small> text 3 <strong>111</strong></small></td>
+          <td><p>lorem 1</p></td>
+        </tr>
+      </table>
+
+      <script>
+
+let selectedTd;
+
+document.querySelector('table').addEventListener('click', handler)
+
+// function handler(event)
+// {
+// 	let target = event.target; // где был клик?
+//     console.log(target)
+// 	if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+
+// 	if (selectedTd) { // убрать существующую подсветку, если есть
+// 		selectedTd.classList.remove('highlight');
+// 	}
+// 	selectedTd = target;
+// 	selectedTd.classList.add('highlight'); // подсветить новый td
+// }
+
+function handler(event)
+{
+	let td = event.target.closest('td');
+	if (!td) return;
+
+	if (selectedTd) { // убрать существующую подсветку, если есть
+		selectedTd.classList.remove('highlight');
+	}
+
+	selectedTd = td;
+	selectedTd.classList.add('highlight'); // подсветить новый td
+}
+
+      </script>
+</body>
+</html>

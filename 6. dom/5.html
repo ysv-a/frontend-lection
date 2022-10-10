@@ -1,0 +1,22 @@
+<div class="content">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <strong>labore et dolore magna aliqua</strong>. Ut enim ad minim veniam,</p>
+</div>
+
+<p class="innerText">Lorem <span style="display: none;">ipsum dolor sit amet, consectetur</span> adipisicing elit, sed do eiusmod tempor incididunt ut <strong>labore et dolore magna aliqua</strong>. Ut enim ad minim veniam</p>
+
+<p class="textContent">Lorem <span style="display: none;">ipsum dolor sit amet, consectetur</span> adipisicing elit, sed do eiusmod tempor incididunt ut <strong>labore et dolore magna aliqua</strong>. Ut enim ad minim veniam</p>
+
+<script>
+const content = document.querySelector('.content');
+console.log(content.innerHTML)
+// content.innerHTML = ''
+content.innerHTML = 'hello world <s>old text</s>'
+
+const paragraph = document.querySelector('p');
+console.log(paragraph.innerText)
+
+const paragraph2 = document.querySelector('p');
+console.log(paragraph2.textContent)
+// paragraph.textContent = "<div>hello</div> asdasd"
+
+</script>

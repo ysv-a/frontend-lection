@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <article>
+        <img src="https://html5css.ru/css/img_lights.jpg" alt="">
+        <h2>Example 1</h2>
+        <div>Descr 1</div>
+    </article>
+</div>
+<script>
+const cards = [
+  {
+	  title: 'Title 1',
+	  img: 'https://html5css.ru/css/img_lights.jpg',
+	  description: '<strong>description 1</strong>'
+  },
+  {
+	  title: 'Title 2',
+	  img: 'https://html5css.ru/css/img_lights.jpg',
+	  description: `description 2 <a onmouseover="alert(document.cookie)">xxs link</a>`
+  },
+];
+
+const container = document.querySelector('.container');
+
+const contentString =
+    cards.map( ({title, img, description}) => `
+      <article>
+        <img src="${img}" alt="${title}">
+        <h2>${title}</h2>
+        <div>${description}</div>
+      </article>
+  `).join('')
+
+container.insertAdjacentHTML('beforeend', contentString);
+
+
+
+// cards.forEach((item) => {
+// 	const article = document.createElement('article')
+
+// 	const img = document.createElement('img')
+// 	img.src = item.img
+
+// 	const h2 = document.createElement('h2')
+// 	h2.textContent = item.title
+
+// 	const div = document.createElement('div')
+// 	div.textContent = item.description
+
+// 	article.append(img)
+// 	article.append(h2)
+// 	article.append(div)
+
+// 	container.append(article);
+// })
+
+</script>
+</body>
+</html>

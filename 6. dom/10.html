@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>FORM
+        <div>DIV
+          <p>P</p>
+        </div>
+      </form>
+      <script>
+
+// document.querySelector('form').addEventListener('click', () => alert('form'))
+// document.querySelector('div').addEventListener('click', () => alert('div'))
+// document.querySelector('p').addEventListener('click', () => alert('p'))
+
+// document.querySelector('form').addEventListener('click', (event) => {
+//     console.log(event.target)
+//     console.log(event.currentTarget)
+//     alert("target = " + event.target.tagName + ", event.currentTarget=" + event.currentTarget.tagName);
+// })
+
+// document.querySelector('form').addEventListener('click', function(event) {
+// 	alert("target = " + event.target.tagName + ", this=" + this.tagName);
+// })
+
+
+document.querySelector('form').addEventListener('click', (event) => {
+	console.log("target = " + event.target.tagName + ", event.currentTarget=" + event.currentTarget.tagName)
+})
+document.querySelector('div').addEventListener('click', (event) => {
+	console.log("target = " + event.target.tagName + ", event.currentTarget=" + event.currentTarget.tagName)
+})
+document.querySelector('p').addEventListener('click', (event) => {
+	console.log("target = " + event.target.tagName + ", event.currentTarget=" + event.currentTarget.tagName)
+})
+
+      </script>
+</body>
+</html>
