@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+	<div class="max-w-2xl mx-auto">
+
+
+		<div class="mt-10 flex gap-3">
+			<div class="js-pagination first text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				1
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				2
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				3
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				4
+			</div>
+		</div>
+
+<script>
+	const state = {
+		page: 1
+	}
+
+	const path = location.pathname
+	const items = document.querySelectorAll('.js-pagination')
+	let currentItem = items[state.page - 1];
+
+	setActiveItem(currentItem)
+
+	items.forEach((item) => {
+		item.onclick = (e) => {
+			const pageNumber = Number(e.target.textContent.trim())
+			if (pageNumber !== 1) {
+				history.pushState({page: pageNumber}, '', path + '/page/' + pageNumber)
+				state.page = pageNumber
+			}else{
+				history.pushState({ page: 1 }, '', path + '/page/')
+				state.page = 1
+			}
+			updateState()
+
+			document.title = `${state.page} cтраница`
+		}
+	})
+
+	function updateState()
+	{
+		setActiveItem(items[state.page - 1])
+	}
+
+	function setActiveItem(node)
+	{
+		if(currentItem){
+			toggleClass(currentItem, 'bg-lime-600', 'bg-red-600')
+		}
+		currentItem = node
+		toggleClass(currentItem, 'bg-red-600', 'bg-lime-600')
+	}
+
+	function toggleClass(node, add, remove)
+	{
+		node.classList.add(add)
+		node.classList.remove(remove)
+	}
+
+	window.addEventListener('popstate', (event) => {
+		state.page = event.state?.page ?? 1
+	  	updateState()
+	});
+
+</script>
+
+</body>
+</html>

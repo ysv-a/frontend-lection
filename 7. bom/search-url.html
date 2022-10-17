@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search</title>
+</head>
+<body>
+
+	<button>ADD</button>
+
+	<script>
+		const search = window.location.search
+		console.log(search);
+
+		// ?itemsId=1,2,3&filter=abcd&id=10
+		const urlParams = new URLSearchParams(search)
+		console.log(urlParams);
+
+		console.log('------')
+
+		for (const [key, value] of urlParams) {
+		    console.log(`${key}:${value}`);
+		}
+
+		console.log('------')
+
+		/*
+			urlParams.keys()
+			urlParams.values()
+		*/
+		const object = Object.fromEntries(urlParams);
+		console.log(object)
+
+		console.log('------')
+
+		document.querySelector('button').onclick = () => {
+			urlParams.set("topic", "More webdev");
+			window.location.search = urlParams.toString();
+		}
+	</script>
+</body>
+</html>

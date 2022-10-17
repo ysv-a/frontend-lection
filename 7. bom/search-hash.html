@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hash</title>
+
+</head>
+<body>
+
+
+
+	<button>ADD</button>
+
+
+	<script>
+		const hash = window.location.hash
+		console.log(hash);
+
+		// #itemsId=1,2,3&filter=abcd&id=10
+		const urlParams = new URLSearchParams(hash.substring(1))
+		console.log(urlParams);
+
+		console.log('------')
+
+		for (const [key, value] of urlParams) {
+		    console.log(`${key}:${value}`);
+		}
+
+		console.log('------')
+
+		const object = Object.fromEntries(urlParams);
+		console.log(object)
+
+		console.log('------')
+
+
+		document.querySelector('button').onclick = () => {
+			// urlParams.set("topic", "More webdev");
+			urlParams.append("topic", "More webdev");
+			window.location.hash = urlParams.toString();
+		}
+
+
+	</script>
+</body>
+</html>

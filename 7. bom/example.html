@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+	
+	<div class="max-w-2xl mx-auto">
+		
+
+		<div class="mt-10 flex gap-3">
+			<div class="js-pagination first text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				1
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				2
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				3
+			</div>
+			<div class="js-pagination text-lg text-white font-bold w-10 h-10 flex items-center justify-center bg-lime-600 cursor-pointer">
+				4
+			</div>
+		</div>
+
+<script>
+	
+
+	const urlParams = new URLSearchParams(window.location.hash.substring(1))
+	const { page: currentPage } = Object.fromEntries(
+	      urlParams.entries()
+	);
+
+	const items = document.querySelectorAll('.js-pagination')
+	let currentItem = currentPage ? items[currentPage - 1] : items[0];
+	setActiveItem(currentItem)
+
+	items.forEach((item) => {
+		item.onclick = (e) => {
+			const newUrlParams = new URLSearchParams();
+			const pageNumber = Number(e.target.textContent.trim())
+		    if (pageNumber !== 1) {
+				newUrlParams.append('page', pageNumber);
+		    }
+		    window.location.hash = newUrlParams.toString();
+		}
+	})
+
+	function setActiveItem(node)
+	{
+		if(currentItem){
+			toggleClass(currentItem, 'bg-lime-600', 'bg-red-600')
+		}
+		currentItem = node
+		toggleClass(currentItem, 'bg-red-600', 'bg-lime-600')
+	}
+
+	function toggleClass(node, add, remove)
+	{
+		node.classList.add(add)
+		node.classList.remove(remove)
+	}
+
+	function syncHash()
+	{
+		const urlParams = new URLSearchParams(window.location.hash.substring(1));
+		const { page } = Object.fromEntries(
+		      urlParams.entries()
+		);
+
+		setActiveItem(page ? items[page - 1] : items[0])
+	}
+
+	window.addEventListener('hashchange', syncHash);
+
+
+</script>
+
+</body>
+</html>
