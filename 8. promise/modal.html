@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+
+
+.micromodal {
+    display: none;
+  }
+
+  .micromodal.is-open {
+    display: flex;
+  }
+
+  .modal-close {
+    position: relative;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    font-size: 0;
+    vertical-align: top;
+    pointer-events: auto;
+    cursor: pointer;
+    background-color: rgba(10,10,10,0.2);
+    border: none;
+    outline: none;
+    appearance: none;
+  }
+
+  .modal-close::before,
+  .modal-close::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: "";
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+  }
+
+  .modal-close::before {
+    width: 50%;
+    height: 2px;
+  }
+
+  .modal-close::after {
+    width: 2px;
+    height: 50%;
+  }
+
+  .modal-close:hover,
+  .modal-close:focus {
+    background-color: rgba(224,224,224,0.3);
+  }
+
+  .is-small.modal-close {
+    width: 16px;
+    min-width: 16px;
+    max-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    max-height: 16px;
+  }
+
+  .is-large.modal-close {
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    height: 32px;
+    min-height: 32px;
+    max-height: 32px;
+  }
+
+  .modal,
+  .modal-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .modal-background {
+    background-color: rgba(80,80,80,.8);
+  }
+
+  .modal-content {
+    padding: 40px 30px;
+    background: white;
+
+  }
+
+  .modal-title {
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    margin: 0 20px;
+    overflow: auto;
+  }
+
+  @media screen and (min-width: 769px) {
+    .modal-content {
+      width: 600px;
+    //   max-height: calc(100vh - 40px);
+      margin: 0 auto;
+      border-radius: 25px;
+    }
+
+    .modal-content.modal-content--xs {
+      width: 450px;
+    }
+
+    .modal-content.modal-content--small {
+      width: 650px;
+    }
+  }
+
+  .modal-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: none;
+  }
+
+  .modal-close.modal-close--inner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .modal-close.modal-close--inner::before,
+  .modal-close.modal-close--inner::after {
+    background: #6f6f6f;
+  }
+
+.flex{
+  display: flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.between{
+  justify-content: space-between;
+}
+
+	</style>
+</head>
+<body>
+
+<button class="open-btn">Удалить запись</button>
+
+<div id="modal" aria-hidden="true" class="modal micromodal">
+<div class="modal-background" tabindex="-1" data-modal-close></div>
+<div class="modal-content relative" role="dialog" aria-modal="true">
+    <div class="flex flex-col mt-5">
+
+      <h1>Вы уверены что хотите удалить запись?</h1>
+
+      <div class="flex between">
+        <button class="btn-cancel">Отмена</button>
+        <button class="btn-ok">Да</button>
+      </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+
+const modal = document.querySelector('#modal');
+const modalBtn = document.querySelector('.open-btn');
+const cancelBtn = document.querySelector('.btn-cancel');
+const okBtn = document.querySelector('.btn-ok');
+
+let resolve;
+let reject;
+let popupPromise = new Promise((success, fail) => {
+    resolve = success;
+    reject = fail;
+  });
+
+modalBtn.onclick = () => {
+  modal.classList.toggle('is-open')
+}
+
+okBtn.onclick = () => {
+  resolve(true)
+  modal.classList.toggle('is-open')
+}
+
+cancelBtn.onclick = () => {
+  resolve(false)
+  modal.classList.toggle('is-open')
+}
+
+
+popupPromise.then(() => {
+  alert('remove!')
+})
+
+</script>
+
+
+</body>
+</html>
