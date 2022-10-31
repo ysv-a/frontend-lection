@@ -1,0 +1,13 @@
+{
+    "root": true,
+    // https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-environments
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+      "prettier",
+      "eslint:recommended"
+    ]
+  }

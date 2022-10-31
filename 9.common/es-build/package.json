@@ -1,0 +1,21 @@
+{
+	"name": "eample",
+	"version": "1.0.0",
+	"description": "",
+	"author": "",
+	"theme_uri": "",
+	"author_uri": "",
+	"text_domain": "",
+	"license": "MIT",
+	"scripts": {
+		"production:js": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./app/app.js --bundle --outfile=./js/app.js --minify",
+		"dev:js": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./app/app.js --bundle --outfile=./js/app.js"
+	},
+	"devDependencies": {
+		"cross-env": "^6.0.3",
+		"esbuild": "^0.12.24"
+	},
+	"dependencies": {
+		"lodash-es": "^4.17.21"
+	}
+}

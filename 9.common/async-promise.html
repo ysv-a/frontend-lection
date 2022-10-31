@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list{
+            font-size: 20px;
+            color:red;
+        }
+        #list span{
+            font-size: 28px;
+            color:white;
+            background-color: black;
+        }
+        .green{
+            color: green !important;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="time-3000">Time - 3000 <span>loading...</span></li>
+        <li class="time-1500">Time - 1500 <span>loading...</span></li>
+        <li class="time-750">Time - 750 <span>loading...</span></li>
+        <li class="time-1000">Time - 1000 <span>loading...</span></li>
+        <li class="time-500">Time - 500 <span>loading...</span></li>
+    </ul>
+    <script>
+        const listItems = document.querySelector('#list')
+        const times = [
+            3000, 1500, 750, 1000, 500
+        ];
+
+        /*
+        times.forEach((time) => {
+            const response = fetch(
+                'https://api.rapidmock.com/mocks/89mEw?time='+time, {
+                    method: 'GET',
+                    headers: {
+                        'x-rapidmock-delay': time,
+                    },
+                })
+
+            response.then(({url}) => {
+                const searchQuery = new URL(url).search
+                const searchParam = new URLSearchParams(searchQuery)
+                const time = searchParam.get('time')
+                const item = document.querySelector(`.time-${time} span`)
+                item.textContent = '!completed!'
+                item.classList.add('green')
+            })
+        })
+        */
+
+        /*
+        const promiseArray = []
+        times.forEach((time) => {
+            const response = fetch(
+                'https://api.rapidmock.com/mocks/89mEw?time='+time, {
+                    method: 'GET',
+                    headers: {
+                        'x-rapidmock-delay': time,
+                    },
+                })
+            promiseArray.push(response)
+        })
+
+        // promiseArray.push(fetch('https://jsonplaceholder.typicode.com/there-is-no-such-route'))
+        // promiseArray.push(fetch('https://api.twitter.com/1.1/statuses/mentions_timeline.json'))
+
+        // Promise.all
+        // Promise.allSettled
+        // Promise.any()
+        // Promise.race()
+        Promise.allSettled(promiseArray).then((responses) => {
+            // console.log(responses)
+            responses.forEach(({url}) => {
+                const searchQuery = new URL(url).search
+                const searchParam = new URLSearchParams(searchQuery)
+                const time = searchParam.get('time')
+                const item = document.querySelector(`.time-${time} span`)
+                item.textContent = '!completed!'
+                item.classList.add('green')
+            })
+        }).catch(error => {
+            console.log(error)
+        })
+        */
+
+        /*
+        async function getPosts()
+        {
+            const response = await fetch(`http://jsonplaceholder.typicode.com/posts`)
+            return await response.json()
+        }
+        // const responsePosts = await getPosts();
+        // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+       (async () => {
+            const responsePosts = await getPosts();
+            console.log(responsePosts)
+       })()
+
+        // responsePosts.then(item => console.log(item))
+        // console.log(responsePosts)
+        */
+    </script>
+</body>
+</html>
