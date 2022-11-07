@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="assets-js/dayjs.min.js"></script>
+    <script src="assets-js/utc.min.js"></script>
+    <script src="assets-js/timezone.min.js"></script>
+    <script src="assets-js/axios.min.js"></script>
+    <script src="assets-js/react.development.js"></script>
+    <script src="assets-js/react-dom.development.js"></script>
+    <script src="assets-js/babel.min.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_timezone)
+    </script>
+</head>
+<body>
+<div id="root"></div>
+
+<button id="addClock">Add Clock</button>
+
+<!--  -->
+<script type="text/jsx">
+
+let state = {
+    time: new Date(),
+    locales: [
+        {
+            id: 1,
+            zone: 'America/Chicago',
+            city: 'Chicago'
+        },
+        {
+            id: 2,
+            zone: 'Europe/Moscow',
+            city: 'Moscow'
+        },
+        {
+            id: 3,
+            zone: 'Asia/Krasnoyarsk',
+            city: 'Krasnoyarsk'
+        },
+    ],
+    articles: []
+}
+
+function App ({ state }) {
+    return (
+        <div className="app">
+            <Header />
+            <Clocks time={state.time} locales={state.locales} />
+            <Articles articles={state.articles} />
+        </div>
+    )
+}
+
+function Loader() {
+    return <div className="loader">Loading....</div>
+}
+
+function Articles() {
+    const [loading, setLoading] = React.useState(true);
+    const [articles, setArticles] = React.useState([])
+
+    React.useEffect(() => {
+        const fetchData = async () =>{
+          setLoading(true);
+          try {
+            const {data: response} = await axios.get('http://127.0.0.1:3000/');
+            setArticles(response);
+          } catch (error) {
+            console.error(error.message);
+          }
+          setLoading(false);
+        }
+        fetchData();
+    }, []);
+
+    return (
+        <>
+        {loading && <Loader />}
+        {!loading && (
+            <div className="articles">
+                {articles.map((article) => <Article article={article} key={article.id} />)}
+            </div>
+        )}
+        </>
+    )
+
+}
+
+function Article({ article }) {
+    return (
+        <div className="article">
+          <h2>{article.name}</h2>
+          <p>{article.description}</p>
+          <footer>
+            <p>count like: <span className="article__like">{article.like}</span></p>
+          </footer>
+        </div>
+    )
+}
+
+function Header () {
+    return (
+        <header className="header">
+            <Logo />
+            <Heading />
+        </header>
+    )
+}
+
+function Logo() {
+    return <img className="logo" src="tailwindcss.svg" alt="" />
+}
+
+function Heading() {
+    const [count, setCount] = React.useState(0);
+    const clickUp = () => {
+        setCount(count + 1)
+        console.log(count)
+    }
+    React.useEffect(() => {
+        console.log('this click Heading')
+    }, [count]);
+
+    return <h1 onClick={clickUp} className="heading">Пример Vurtual Dom {count}</h1>
+}
+
+function AddClock(props) {
+    const zones=[{id:5,zone:"America/Barbados",city:"Barbados"},{id:6,zone:"Europe/Madrid",city:"Madrid"},{id:7,zone:"Asia/Bangkok",city:"Bangkok"},{id:8,zone:"America/Vancouver",city:"Vancouver"}];
+
+    function add() {
+        const rand = Math.floor(Math.random() * zones.length)
+        const zone = zones[rand]
+
+        props.onAddNewClock(zone)
+    }
+
+    return (
+        <button onClick={add} className="addBtn">Add New Clock</button>
+    )
+}
+
+function Clocks() {
+    const initialStateLocales = [{id: 1,zone: 'America/Chicago',city: 'Chicago'},{id: 2,zone: 'Europe/Moscow',city: 'Moscow'},{id: 3,zone: 'Asia/Krasnoyarsk',city: 'Krasnoyarsk'}]
+
+    const [time, setTime] = React.useState(new Date());
+    const [locales, setLocales] = React.useState(initialStateLocales);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(new Date());
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    function handleAddNewClock(zone) {
+        setLocales(prevState => {
+            return [...prevState, zone]
+        });
+    }
+
+    return (
+        <>
+            <AddClock onAddNewClock={handleAddNewClock} />
+            <div className="clocks">
+                {locales.map((locale) => <Clock time={time} locale={locale} key={locale.id} />)}
+            </div>
+        </>
+    )
+}
+
+
+
+function Clock ({ time, locale }) {
+    const localeTimeTz = dayjs.tz(time, locale.zone)
+    const isDay = localeTimeTz.hour() >= 7 && localeTimeTz.hour() <= 21
+
+    function removeElementEvent(id, event)
+    {
+        console.log(id)
+        console.log(event)
+    }
+
+    return (
+        <div onClick={(e) => removeElementEvent(locale.id, e)} className={isDay ? 'clock clock--morning' : 'clock clock--night'}>
+            <span>{locale.city}</span>
+            <span className="locale-time">{localeTimeTz.format('HH:mm:ss')}</span>
+        </div>
+    )
+}
+
+
+
+
+const webSocket = new WebSocket('ws://localhost:443/');
+webSocket.onmessage = (event) => {
+    const dataLikes = JSON.parse(event.data);
+
+    if(state.articles.length){
+        state = {
+            ...state,
+            articles: state.articles.map((article) => {
+                return {
+                    ...article,
+                    like: dataLikes.find(item => item.id === article.id).count
+                }
+            })
+        }
+        renderView(state)
+    }
+}
+
+const addClock = document.querySelector('#addClock')
+addClock.onclick = () => {
+    const zones = [
+        {
+            id: 5,
+            zone: 'America/Barbados',
+            city: 'Barbados'
+        },
+        {
+            id: 6,
+            zone: 'Europe/Madrid',
+            city: 'Madrid'
+        },
+        {
+            id: 7,
+            zone: 'Asia/Bangkok',
+            city: 'Bangkok'
+        },
+        {
+            id: 8,
+            zone: 'America/Vancouver',
+            city: 'Vancouver'
+        },
+    ]
+    const rand = Math.floor(Math.random() * zones.length)
+    const zone = zones[rand]
+    const locales = state.locales
+    locales.push(zone)
+
+    state = {
+        ...state,
+        locales
+    }
+
+    renderView(state)
+
+}
+
+renderView(state)
+
+function renderView (state) {
+    ReactDOM.render(
+        React.createElement(App, { state }),
+        document.getElementById('root')
+    )
+}
+
+
+</script>
+
+</body>
+</html>

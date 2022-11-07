@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Nvidia",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aliquam aliquid earum aspernatur ipsam eum dolorum vero. Soluta quisquam molestiae iusto. Rem alias cum ipsa voluptas. Odit exercitationem rem quos!",
+        "like": 0
+    },
+    {
+        "id": 2,
+        "name": "AMD",
+        "description":  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aliquam aliquid earum aspernatur ipsam eum dolorum vero. Soluta quisquam molestiae iusto. Rem alias cum ipsa voluptas. Odit exercitationem rem quos!",
+        "like": 5
+    },
+    {
+        "id": 3,
+        "name": "INTEL",
+        "description":  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia aliquam aliquid earum aspernatur ipsam eum dolorum vero. Soluta quisquam molestiae iusto. Rem alias cum ipsa voluptas. Odit exercitationem rem quos!",
+        "like": 10
+    }
+]

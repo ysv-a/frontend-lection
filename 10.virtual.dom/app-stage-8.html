@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="assets-js/dayjs.min.js"></script>
+    <script src="assets-js/utc.min.js"></script>
+    <script src="assets-js/timezone.min.js"></script>
+    <script src="assets-js/axios.min.js"></script>
+
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_timezone)
+    </script>
+</head>
+<body>
+<div id="root"></div>
+
+<button id="addClock">Add Clock</button>
+
+<script>
+
+function h(tag, props, children) {
+    return {
+        tag,
+        props,
+        children
+    }
+}
+
+// const vNodeVue = h('div', { class: 'red' }, [
+//     h('span', null, 'hello'),
+//     h('h1', null, 'hello h1'),
+// ])
+
+
+const VDom = {
+  createElement: (type, config, ...children) => {
+
+    const props = config || {}
+
+    if (children.length === 1) {
+      props.children = children[0]
+    } else {
+      props.children = children
+    }
+
+    return {
+      type,
+      props
+    }
+  }
+}
+
+let state = {
+    time: new Date(),
+    locales: [
+        {
+            id: 1,
+            zone: 'America/Chicago',
+            city: 'Chicago'
+        },
+        {
+            id: 2,
+            zone: 'Europe/Moscow',
+            city: 'Moscow'
+        },
+        {
+            id: 3,
+            zone: 'Asia/Krasnoyarsk',
+            city: 'Krasnoyarsk'
+        },
+    ],
+    articles: []
+}
+
+function App ({ state }) {
+    return VDom.createElement('div', { className: 'app' },
+        VDom.createElement(Header),
+        VDom.createElement(Clocks, { time: state.time, locales: state.locales }),
+        VDom.createElement(Articles, { articles: state.articles })
+    )
+}
+
+function Loader() {
+    return VDom.createElement('div', { className: 'loader' }, 'Loading....')
+}
+
+function Articles({articles}) {
+    if(articles.length === 0){
+        return VDom.createElement(Loader)
+    }
+
+    return VDom.createElement('div', { className: 'articles' },
+        articles.map((article) => VDom.createElement(Article, { article }))
+    )
+
+}
+
+
+
+function Article({ article }) {
+
+    return VDom.createElement('div', { className: 'article' },
+        VDom.createElement('h2', {}, article.name),
+        VDom.createElement('p', {}, article.description),
+        VDom.createElement('footer', {},
+            VDom.createElement('p', {},
+             'count like: ',
+             VDom.createElement('span', { className: 'article__like'}, article.like)
+            ),
+        ),
+    )
+
+}
+
+function Header () {
+    return VDom.createElement('header', { className: 'header' },
+        VDom.createElement(Logo),
+        VDom.createElement(Heading)
+    )
+}
+
+function Logo() {
+    return VDom.createElement('img', { className: 'logo', src: 'tailwindcss.svg' })
+}
+
+function Heading() {
+    return VDom.createElement('h1', { className: 'heading' }, 'Пример Vurtual Dom')
+}
+
+function Clocks({ time, locales }) {
+    return VDom.createElement('div', { className: 'clocks' },
+        locales.map((locale) => VDom.createElement(Clock, { time, locale }))
+    )
+}
+
+function removeElementEvent(id, event)
+{
+    console.log(id)
+    console.log(event)
+}
+
+function Clock ({ time, locale }) {
+    const localeTimeTz = dayjs.tz(time, locale.zone)
+    const isDay = localeTimeTz.hour() >= 7 && localeTimeTz.hour() <= 21
+
+    return VDom.createElement(
+        'div', { className: isDay ? 'clock clock--morning' : 'clock clock--night', onclick: (e) => {
+            removeElementEvent(locale.id, e)
+        } },
+        VDom.createElement('span', {}, locale.city),
+        VDom.createElement('span', {className: 'locale-time'}, localeTimeTz.format('HH:mm:ss')),
+    )
+}
+
+
+setInterval(() => {
+  state = {
+    ...state,
+    time: new Date()
+  }
+
+  renderView(state)
+}, 1000)
+
+axios.get('http://127.0.0.1:3000/').then((response) => {
+    state = {
+        ...state,
+        articles: response.data
+    }
+
+    renderView(state)
+})
+
+const webSocket = new WebSocket('ws://localhost:443/');
+webSocket.onmessage = (event) => {
+    const dataLikes = JSON.parse(event.data);
+
+    if(state.articles.length){
+        state = {
+            ...state,
+            articles: state.articles.map((article) => {
+                return {
+                    ...article,
+                    like: dataLikes.find(item => item.id === article.id).count
+                }
+            })
+        }
+        renderView(state)
+    }
+}
+
+const addClock = document.querySelector('#addClock')
+addClock.onclick = () => {
+    const zones = [
+        {
+            id: 5,
+            zone: 'America/Barbados',
+            city: 'Barbados'
+        },
+        {
+            id: 6,
+            zone: 'Europe/Madrid',
+            city: 'Madrid'
+        },
+        {
+            id: 7,
+            zone: 'Asia/Bangkok',
+            city: 'Bangkok'
+        },
+        {
+            id: 8,
+            zone: 'America/Vancouver',
+            city: 'Vancouver'
+        },
+    ]
+    const rand = Math.floor(Math.random() * zones.length)
+    const zone = zones[rand]
+    const locales = state.locales
+    locales.push(zone)
+
+    state = {
+        ...state,
+        locales
+    }
+
+    renderView(state)
+
+}
+
+renderView(state)
+
+function renderView (state) {
+    render(
+        VDom.createElement(App, { state }),
+        document.getElementById('root')
+    )
+}
+
+
+
+function render (virtualDom, realDomRoot) {
+    const evaluatedVirtualDom = evaluate(virtualDom)
+
+    const virtualDomRoot = {
+        type: realDomRoot.tagName.toLowerCase(),
+        props: {
+            id: realDomRoot.id,
+            children: [
+                evaluatedVirtualDom
+            ]
+        },
+    }
+
+    sync(virtualDomRoot, realDomRoot)
+}
+
+function evaluate (virtualNode) {
+
+  if (typeof virtualNode !== 'object') {
+    return virtualNode
+  }
+
+  if (typeof virtualNode.type === 'function') {
+
+    return evaluate((virtualNode.type)(virtualNode.props))
+  }
+
+  const props = virtualNode.props || {}
+
+  return {
+    ...virtualNode,
+    props: {
+      ...props,
+      children: Array.isArray(props.children) ? props.children.map(evaluate) : [evaluate(props.children)]
+    }
+  }
+}
+
+
+function sync (virtualNode, realNode) {
+  // Sync element
+  if (virtualNode.props) {
+    Object.entries(virtualNode.props).forEach(([name, value]) => {
+      if (name === 'children') {
+        return
+      }
+      if (realNode[name] !== value) {
+        realNode[name] = value
+      }
+    })
+  }
+
+  if (typeof virtualNode !== 'object' && virtualNode !== realNode.nodeValue) {
+    realNode.nodeValue = virtualNode
+  }
+
+  // Sync child nodes
+  const virtualChildren = virtualNode.props ? virtualNode.props.children || [] : []
+  const realChildren = realNode.childNodes
+
+  for (let i = 0; i < virtualChildren.length || i < realChildren.length; i++) {
+    const virtual = virtualChildren[i]
+    const real = realChildren[i]
+
+    // Remove
+    if (virtual === undefined && real !== undefined) {
+      realNode.remove(real)
+    }
+
+    // Update
+    if (virtual !== undefined && real !== undefined && (virtual.type || '') === (real.tagName || '').toLowerCase()) {
+      sync(virtual, real)
+    }
+
+    // Replace
+    if (virtual !== undefined && real !== undefined && (virtual.type || '') !== (real.tagName || '').toLowerCase()) {
+      const newReal = createRealNodeByVirtual(virtual)
+      sync(virtual, newReal)
+      realNode.replaceChild(newReal, real)
+    }
+
+    // Add
+    if (virtual !== undefined && real === undefined) {
+      const newReal = createRealNodeByVirtual(virtual)
+      sync(virtual, newReal)
+      realNode.appendChild(newReal)
+    }
+  }
+}
+
+function createRealNodeByVirtual (virtual) {
+  if (typeof virtual !== 'object') {
+    return document.createTextNode('')
+  }
+  return document.createElement(virtual.type)
+}
+
+</script>
+
+</body>
+</html>

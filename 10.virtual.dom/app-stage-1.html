@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="assets-js/dayjs.min.js"></script>
+    <script src="assets-js/utc.min.js"></script>
+    <script src="assets-js/timezone.min.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_timezone)
+        dayjs.tz("2013-11-18 11:55:20", "America/Toronto")
+
+    </script>
+
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+
+const state = {
+    time: new Date(),
+    locales: [
+        {
+            zone: 'America/Chicago',
+            city: 'Chicago'
+        },
+        {
+            zone: 'Europe/Moscow',
+            city: 'Moscow'
+        },
+        {
+            zone: 'Asia/Krasnoyarsk',
+            city: 'Krasnoyarsk'
+        },
+    ]
+}
+
+function App ({ state }) {
+    const node = document.createElement('div')
+    node.className = 'app'
+
+    node.append(Header())
+    node.append(Clocks({ time: state.time, locales: state.locales }))
+
+    return node
+}
+
+
+function Header () {
+    const node = document.createElement('header')
+    node.className = 'header'
+
+    node.append(Logo())
+    node.append(Heading())
+    return node
+}
+
+function Logo() {
+    const node = document.createElement('img')
+    node.className = 'logo'
+    node.src = 'tailwindcss.svg'
+    return node
+}
+
+function Heading() {
+    const node = document.createElement('div')
+    node.className = 'heading'
+    node.textContent = 'Пример Vurtual Dom'
+    return node
+}
+
+function Clocks({ time, locales }) {
+
+    const node = document.createElement('div')
+    node.className = 'clocks'
+
+    locales.forEach((locale) => {
+        node.append(Clock({ time, locale }))
+    })
+    return node
+}
+
+function Clock ({ time, locale }) {
+
+    const localeTimeTz = dayjs.tz(time, locale.zone)
+
+    const node = document.createElement('div')
+
+    if (localeTimeTz.hour() >= 7 && localeTimeTz.hour() <= 21) {
+        node.className = 'clock clock--morning'
+    }else{
+        node.className = 'clock clock--night'
+    }
+
+    const nodeTextZone = document.createElement('span')
+    nodeTextZone.textContent = locale.city
+
+
+    const nodeTextTime = document.createElement('span')
+    nodeTextTime.textContent = localeTimeTz.format('HH:mm:ss')
+
+    node.append(nodeTextZone)
+    node.append(nodeTextTime)
+
+    return node
+}
+
+render(
+    App({ state }),
+    document.getElementById('root')
+)
+
+function render (newDom, realDomRoot) {
+    realDomRoot.innerHTML = ''
+    realDomRoot.append(newDom)
+}
+
+</script>
+
+</body>
+</html>

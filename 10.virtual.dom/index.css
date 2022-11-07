@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #c5c5c5;
+}
+.logo{
+    width: 220px;
+}
+.heading{
+    font-size: 30px;
+    margin-left: auto;
+    font-weight: bold;
+    color: red;
+}
+h1{
+    margin: 0;
+}
+.clocks{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.clock {
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    margin-top: 1rem;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.clock--morning{
+    background-color: #8bc34a;
+    color: white;
+}
+.clock--night{
+    background-color: #3f51b5;
+    color: white;
+}
+.articles{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+.article {
+    background: #ffffff;
+    border: 1px solid black;
+    padding: 10px;
+}
+.article__like{
+    font-size: 20px;
+    font-weight: bold;
+}
+.loader{
+    font-size: 20px;
+    text-align: center;
+    background: #e2e2e2;
+    padding: 35px 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.addBtn{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
