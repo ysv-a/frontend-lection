@@ -1,0 +1,87 @@
+{
+    "root": true,
+    "parser": "vue-eslint-parser",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021
+    },
+    "plugins": ["html", "import"],
+    "extends": [
+        "plugin:vue/vue3-recommended",
+        "prettier"
+    ],
+    "rules": {
+        "import/order": [
+            "error",
+            {
+              "groups": [
+                "builtin",
+                "external",
+                "internal",
+                "parent",
+                "sibling",
+                "index",
+                "object",
+                "type",
+                "unknown"
+              ],
+            //   "pathGroups": [
+            //     {
+            //       "pattern": "@/+(runtimeEnv|store|router)",
+            //       "group": "external",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/modules/**",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/shared/**",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/utils/**",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/http/**!(dto)",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/http/dto/**",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/ui/**/!(*.vue)",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "@/ui/**/*.vue",
+            //       "group": "internal",
+            //       "position": "after"
+            //     },
+            //     {
+            //       "pattern": "{./,../,../../,../../../,../../../../}**/*.vue",
+            //       "group": "parent",
+            //       "position": "after"
+            //     }
+            //   ],
+              "alphabetize": {
+                "order": "asc",
+                "caseInsensitive": false
+              }
+            //   "newlines-between": "always"
+            }
+          ]
+    }
+  }
