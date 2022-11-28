@@ -1,0 +1,25 @@
+import { useState, useEffect } from 'react'
+
+const [enable, setEnable] = useState(false)
+  const users = queryClient.getQueryData(['users'])
+  const cachedUser = users?.find((d) => d.id == userId)
+  queryClient.setQueryData(['user', userId], cachedUser)
+
+  useEffect(() => {
+    if (!cachedUser) {
+      setEnable(true)
+    }
+  }, [cachedUser])
+
+  const {
+    isLoading,
+    isRefetching,
+    error,
+    data: user,
+  } = useQuery(['user', userId], () => fetchUser(userId), {
+    refetchOnWindowFocus: false,
+    enabled: enable,
+    initialData: () => {
+      return queryClient.getQueryData(['users'])?.find((d) => d.id == userId)
+    },
+  })

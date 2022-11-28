@@ -1,0 +1,11 @@
+.card{
+    padding: 10px;
+    border: 5px solid black;
+    font-size: 40px;
+    line-height: 1.5;
+}
+
+.card--active{
+    background-color: red;
+    color:white;
+}
