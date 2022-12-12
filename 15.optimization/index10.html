@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <style id='remove-bg'>
+    @media (max-width: 700px){
+        *:not(*.removebg){
+            background-image: none !important;
+        }
+    }
+    .icon{
+        width: 24px;
+        height: 24px;
+    }
+    </style>
+
+</head>
+<body>
+    <header class="banner" style="background-image: url('images_webp/bg.webp');">
+        <div class="banner__inner">
+            <h1 class="banner__title">Photo Gallery</h1>
+        </div>
+    </header>
+
+
+    <section class="gallery">
+        <div class="gallery__inner">
+            <h2 class="gallery__title">Gallery Grid</h2>
+        </div>
+        <div class="gallery__grid">
+            <article>
+                <a href="images_webp/adrian-dascal-AFppPIyQpH4-unsplash.jpg" data-fancybox="gallery">
+                    <img
+                    decoding="async"
+                    class="gallery__item lazy"
+                    sizes="(max-width: 3500px) 40vw, 1400px"
+                    srcset="lazy-preload.svg 100w"
+                    data-srcset="
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_480.webp 480w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_662.webp 662w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_815.webp 815w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_928.webp 928w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_982.webp 982w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_1108.webp 1108w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_1223.webp 1223w,
+                    images_webp/adrian-dascal-AFppPIyQpH4-unsplash_bmypvw_c_scale,w_1400.webp 1400w"
+                    src="images_webp/adrian-dascal-AFppPIyQpH4-unsplash.jpg"
+                    alt="">
+                    <svg class="icon">
+                        <use xlink:href="#alert-octagon"></use>
+                      </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_200.webp 200w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_553.webp 553w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_800.webp 800w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_928.webp 928w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_1039.webp 1039w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_1348.webp 1348w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_1378.webp 1378w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_1386.webp 1386w,
+                images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash_lyezhw_c_scale,w_1400.webp 1400w"
+                src="images_webp/marek-piwnicki--9f4ZSP1_3o-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-octagon"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/thiva-HwTlf2i30X8-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                srcset="lazy-preload.svg 100w"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                data-srcset="
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_200.webp 200w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_510.webp 510w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_723.webp 723w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_896.webp 896w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_959.webp 959w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_1092.webp 1092w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_1239.webp 1239w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_1369.webp 1369w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_1381.webp 1381w,
+                images_webp/thiva-HwTlf2i30X8-unsplash_ylpbms_c_scale,w_1400.webp 1400w"
+                src="images_webp/thiva-HwTlf2i30X8-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-octagon"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/pramod-tiwari-XwA54eDOQWs-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_200.webp 200w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_634.webp 634w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_848.webp 848w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_1042.webp 1042w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_1275.webp 1275w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_1396.webp 1396w,
+                images_webp/pramod-tiwari-XwA54eDOQWs-unsplash_hswtdo_c_scale,w_1400.webp 1400w"
+                src="images_webp/pramod-tiwari-XwA54eDOQWs-unsplash.jpg"
+                alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/artem-astashov-JzY3Uj24wKQ-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_200.webp 200w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_501.webp 501w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_699.webp 699w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_843.webp 843w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_930.webp 930w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_1058.webp 1058w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_1205.webp 1205w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_1271.webp 1271w,
+                images_webp/artem-astashov-JzY3Uj24wKQ-unsplash_cphl22_c_scale,w_1400.webp 1400w"
+                src="images_webp/artem-astashov-JzY3Uj24wKQ-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-octagon"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash_tf6oxv_c_scale,w_200.webp 200w,
+                images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash_tf6oxv_c_scale,w_808.webp 808w,
+                images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash_tf6oxv_c_scale,w_1181.webp 1181w,
+                images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash_tf6oxv_c_scale,w_1400.webp 1400w"
+                src="images_webp/robbin-grimm-lTCIwOu4Pgc-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-triangle"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_200.webp 200w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_637.webp 637w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_883.webp 883w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_1051.webp 1051w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_1229.webp 1229w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_1381.webp 1381w,
+                images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash_zsxenw_c_scale,w_1400.webp 1400w"
+                src="images_webp/srikanta-h-u-Ju0DX6yhcBE-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-triangle"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/guille-alvarez-IENX30F7Gw8-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                srcset="lazy-preload.svg 100w"
+                data-srcset="
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_200.webp 200w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_559.webp 559w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_729.webp 729w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_904.webp 904w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1062.webp 1062w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1217.webp 1217w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1280.webp 1280w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1348.webp 1348w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1387.webp 1387w,
+                images_webp/guille-alvarez-IENX30F7Gw8-unsplash_trmcit_c_scale,w_1400.webp 1400w"
+                src="images_webp/guille-alvarez-IENX30F7Gw8-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-triangle"></use>
+                  </svg>
+                </a>
+            </article>
+            <article>
+                <a href="images_webp/matej-rieciciar-bPRxj7wNft8-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                srcset="lazy-preload.svg 100w"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                data-srcset="
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_200.webp 200w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_566.webp 566w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_729.webp 729w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_939.webp 939w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_1098.webp 1098w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_1262.webp 1262w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_1371.webp 1371w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_1327.webp 1327w,
+                images_webp/matej-rieciciar-bPRxj7wNft8-unsplash_ergrov_c_scale,w_1400.webp 1400w"
+                src="images_webp/matej-rieciciar-bPRxj7wNft8-unsplash.jpg"
+                alt="">
+                </a>
+                <svg class="icon">
+                    <use xlink:href="#alert-triangle"></use>
+                  </svg>
+            </article>
+            <article>
+                <a href="images_webp/tony-litvyak-H7RLUfM1sus-unsplash.jpg" data-fancybox="gallery">
+                <img
+                decoding="async"
+                class="gallery__item lazy"
+                srcset="lazy-preload.svg 100w"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                data-srcset="
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_200.webp 200w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_428.webp 428w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_566.webp 566w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_759.webp 759w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_939.webp 939w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_1117.webp 1117w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_1277.webp 1277w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_1396.webp 1396w,
+                images_webp/tony-litvyak-H7RLUfM1sus-unsplash_e87kr6_c_scale,w_1400.webp 1400w"
+                src="images_webp/tony-litvyak-H7RLUfM1sus-unsplash.jpg"
+                alt="">
+                <svg class="icon">
+                    <use xlink:href="#alert-triangle"></use>
+                  </svg>
+                </a>
+            </article>
+
+        </div>
+        <a href="images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash.jpg" data-fancybox="gallery">
+        <img
+        decoding="async"
+        class="w-full lazy"
+        srcset="lazy-preload.svg 100w"
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        data-srcset="
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_200.webp 200w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_666.webp 666w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1013.webp 1013w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1118.webp 1118w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1210.webp 1210w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1284.webp 1284w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1396.webp 1396w,
+        images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash_bpv0lt_c_scale,w_1400.webp 1400w"
+        src="images_webp/yashowardhan-singh-t4qZrIKKemY-unsplash.jpg"
+        alt="">
+        <svg class="icon">
+            <use xlink:href="#alert-triangle"></use>
+          </svg>
+        </a>
+    </section>
+
+
+    <div class="swiper-container swiper-observer">
+        <div class="swiper-container__inner">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2>Header 1</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                <div class="swiper-slide">
+                    <h2>Header 2</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                <div class="swiper-slide">
+                    <h2>Header 3</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                <div class="swiper-slide">
+                    <h2>Header 4</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                <div class="swiper-slide">
+                    <h2>Header 5</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                <div class="swiper-slide">
+                    <h2>Header 6</h2>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus provident architecto alias cumque. Porro et libero neque ex obcaecati adipisci eos molestiae praesentium? Sed fuga fugit quibusdam! Placeat, quaerat nostrum.
+                </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <svg width="0" height="0" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="alert-octagon">
+          <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="alert-triangle">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </symbol>
+      </svg>
+
+    <script>
+        function loadScript(url, async, callback)
+        {
+            async = async || false;
+            callback = callback || false;
+            var head = document.head;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            if (async) {
+                script.async = async;
+            }
+            if (callback) {
+                script.onreadystatechange = callback;
+                script.onload = callback;
+            }
+            head.appendChild(script);
+        }
+
+        function loadStyle(url)
+        {
+            var style = document.createElement('link');
+            style.type = 'text/css';
+            style.rel = 'stylesheet';
+            style.href = url;
+            var s = document.getElementsByTagName('link')[0];
+            s.parentNode.insertBefore(style, s);
+        }
+    </script>
+    <script src="js/lazyload.js"></script>
+    <script src="main2.js"></script>
+    <script>
+        // loadScript('https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js');
+        // loadStyle('https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css');
+
+        (function () {
+            var swiperSelector = document.querySelectorAll('.swiper-observer');
+            if (swiperSelector.length) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            loadScript('https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', true, sliderInit);
+                            loadStyle('https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: .1
+                });
+                swiperSelector.forEach(function (i) {
+                    observer.observe(i);
+                });
+            }
+        })();
+
+    </script>
+
+</body>
+</html>

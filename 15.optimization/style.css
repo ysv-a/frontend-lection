@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+}
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+body{
+    font-family: 'Zen Dots', cursive;
+}
+.render-auto{
+    content-visibility: auto;
+}
+.contain-paint{
+    contain: paint;
+}
+.banner{
+    background-size: cover;
+}
+.banner__inner, .gallery__inner, .swiper-container__inner{
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.gallery__inner{
+    margin-top: 50px;
+}
+
+.banner__title{
+    color: white;
+    font-size: 60px;
+    padding: 150px 0;
+}
+
+
+.gallery__title{
+    font-size: 48px;
+
+}
+
+
+.gallery__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 0 50px;
+    gap: 30px;
+    margin-top: 25px;
+}
+.gallery__item{
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.swiper-container{
+    background: #f4f4f4;
+}
+
+
+.swiper-container__inner{
+    padding: 100px 8px;
+}
+
+.swiper-slide{
+    font-size: 18px;
+}
+
+
+.mySwiper  .swiper-pagination {
+    position: static;
+}
+
+
+@media screen and (max-width: 768px) {
+    .gallery__grid{
+        padding: 0;
+    }
+}
+
+.w-full{
+    width: 100%;
+}

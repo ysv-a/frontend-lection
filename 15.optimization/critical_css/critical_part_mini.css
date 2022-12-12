@@ -1,0 +1,14 @@
+*{margin: 0;}img{max-inline-size: 100%;
+    block-size: auto;}body{font-family: 'Zen Dots', cursive;}.banner{background-size: cover;}.banner__inner,.gallery__inner,.swiper-container__inner{max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;}.gallery__inner{margin-top: 50px;}.banner__title{color: white;
+    font-size: 60px;
+    padding: 150px 0;}.gallery__title{font-size: 48px;}.gallery__grid{display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 0 50px;
+    gap: 30px;
+    margin-top: 25px;}.gallery__item{height: 600px;
+    width: 100%;
+    object-fit: cover;}.swiper-container{background: #f4f4f4;}.swiper-container__inner{padding: 100px 8px;}.swiper-slide{font-size: 18px;}.mySwiper  .swiper-pagination{position: static;}@media screen and (max-width: 768px){.gallery__grid{padding: 0;}}.w-full{width: 100%;}@charset "UTF-8";:root{--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff;--bs-link-color:#0d6efd;--bs-link-hover-color:#0a58ca;}*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}h1,h2{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}a{color:var(--bs-link-color);text-decoration:underline}a:hover{color:var(--bs-link-hover-color)}img{vertical-align:middle}::-moz-focus-inner{padding:0;border-style:none}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}::file-selector-button{font:inherit;-webkit-appearance:button}
